@@ -15,7 +15,7 @@ exclude = [".gitignore", ".idea", "docs", "iOS_client"]
 [features]
 ascii-fallback = []
 
-[target.'cfg(target_os = "linux")'.dependencies]
+[target.'cfg(target_os = "freebsd")'.dependencies]
 x11 = { git="https://github.com/bjornsnoen/x11-rs", features = ["xlib"] }
 
 [target.'cfg(target_os = "macos")'.dependencies]

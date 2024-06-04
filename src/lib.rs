@@ -42,7 +42,11 @@ pub use r#enum::*;
 pub mod traits;
 pub use traits::*;
 
-#[cfg(target_os = "linux")]
+///use anyhow::Context;
+///use core::task::Context;
+///use std::task::Context;
+
+#[cfg(target_os = "freebsd")]
 mod linux_common;
 
 // #[cfg(all(target_os = "linux", not(x11)))]
@@ -50,9 +54,9 @@ mod linux_common;
 // #[cfg(all(target_os = "linux", not(x11)))]
 // pub use linux_wayland::Context;
 
-#[cfg(all(target_os = "linux"))]
+#[cfg(all(target_os = "freebsd"))]
 mod linux_x11;
-#[cfg(all(target_os = "linux"))]
+#[cfg(all(target_os = "freebsd"))]
 pub use linux_x11::Context;
 
 #[cfg(target_os = "macos")]
